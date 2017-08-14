@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./client/componentes/client/componentes/a.scss"],"names":[],"mappings":"AAEA;EACC,eAHc,EAId","file":"style.css","sourcesContent":["$color: #ff0000;\r\n\r\n.rojo{\r\n\tcolor: $color;\r\n}\n\n\n// WEBPACK FOOTER //\n// ./client/componentes/client/componentes/a.scss"],"sourceRoot":""}
