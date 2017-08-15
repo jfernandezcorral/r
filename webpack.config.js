@@ -16,6 +16,12 @@ module.exports = {
   devServer: {
     host: "0.0.0.0"
   },
+  resolve: {
+    modules: [
+      path.resolve('./client'),
+      path.resolve('./node_modules')
+    ]
+  },
   devtool: 'source-map',
   module: {
     loaders: [
