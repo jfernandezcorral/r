@@ -9,7 +9,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const extractCSS = new ExtractTextPlugin('style.css');
 module.exports = {
-  entry: './client/index.js',
+  entry: ["babel-polyfill",'./client/index.js'],
   output: {
     path: path.resolve('dist'),
     filename: 'index_bundle.js'
@@ -51,7 +51,7 @@ module.exports = {
     ]
   },
   plugins: [HtmlWebpackPluginConfig,
-            extractCSS,
+            extractCSS/*,
             new webpack.LoaderOptionsPlugin({
               minimize: true,
               debug: false
@@ -67,6 +67,6 @@ module.exports = {
                 screw_ie8: true
               },
               comments: false
-            })
+            })*/
   ]
 }
