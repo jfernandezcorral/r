@@ -1,7 +1,7 @@
 import React from 'react';
 import estilos from'./App.scss';
 import Comercial from './comercial/Comercial';
-import ScrollInfinito from './base/ScrollInfinito';
+import ScrollInfinito from 'cmp/base/ScrollInfinito';
 export default class App extends React.Component {
   render() {
     return (

@@ -8,20 +8,24 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 })
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const extractCSS = new ExtractTextPlugin('style.css');
-module.exports = {
+let config = {
   entry: ["babel-polyfill",'./client/index.js'],
   output: {
-    path: path.resolve('dist'),
+    path: path.resolve(__dirname,'./dist'),
     filename: 'index_bundle.js'
   },
   devServer: {
     host: "0.0.0.0"
   },
   resolve: {
-    modules: [
+    extensions: ['.js', '.jsx', '.css', '.scss'],
+    alias: {
+      cmp: path.resolve(__dirname,'./client/componentes')
+    }
+    /*modules: [
       path.resolve('./client'),
       path.resolve('./node_modules')
-    ]
+    ]*/
   },
   devtool: 'source-map',
   module: {
@@ -29,7 +33,7 @@ module.exports = {
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.scss$/, 
-        use: extractCSS.extract({
+        use: ExtractTextPlugin.extract({
           fallback: "style-loader",
           use: [
             {loader: 'css-loader', options: {modules: true, localIdentName: '[name]__[local]___[hash:base64:5]', sourceMap: true}},
@@ -38,35 +42,23 @@ module.exports = {
         }) 
       },
       { test: /\.css$/, 
-        use: extractCSS.extract({
+        use: ExtractTextPlugin.extract({
           fallback: "style-loader",
           use: [
             {loader: 'css-loader', options: {modules: true, localIdentName: '[name]__[local]___[hash:base64:5]', sourceMap: true}}
           ]
         }) 
-      }//,
-      //{ test: /\.css$/, use: ['style-loader',
-      //  {loader: 'css-loader', options: {modules: true, localIdentName: '[name]__[local]___[hash:base64:5]'/*, sourceMap: true*/}}
-      //]}
+      }
     ]
   },
   plugins: [HtmlWebpackPluginConfig,
-            extractCSS/*,
-            new webpack.LoaderOptionsPlugin({
-              minimize: true,
-              debug: false
-            }),
-            new webpack.optimize.UglifyJsPlugin({
-              sourceMap: true,
-              beautify: false,
-              mangle: {
-                screw_ie8: true,
-                keep_fnames: true
-              },
-              compress: {
-                screw_ie8: true
-              },
-              comments: false
-            })*/
+            extractCSS
   ]
+}
+module.exports = config
+if (process.env.NODE_ENV === 'production') {
+  console.log('compilación producción')
+  module.exports.plugins.push(
+    new webpack.optimize.UglifyJsPlugin() // call the uglify plugin
+  );
 }
