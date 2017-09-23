@@ -9,7 +9,14 @@ export default class App extends React.Component {
         this.handle = this.handle.bind(this)
     }
     handle(e){
-        modal()
+        const diag = <div style={{width: '500px'}}>
+            <h1>Se va a enviar el formulario al servidor</h1>
+            <div style={{display: 'flex'}}>
+                <button onClick={()=>{console.log('hola');this.cerrar()}}>Aceptar</button>
+                <button onClick={()=>this.cerrar()}>Cancelar</button>
+            </div>
+        </div>
+       this.cerrar = modal(diag)
     }
     render() {
         return (
