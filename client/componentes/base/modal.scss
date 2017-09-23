@@ -1,0 +1,27 @@
+.t {
+	transform: translate3D(0,0,0);
+	animation: tr .7s ease-in-out;
+	opacity: 0.7;
+}
+@keyframes tr{
+	0%{
+		opacity: 0
+	}
+	100%{
+		opacity: 0.7
+	}
+
+}
+.popup{
+	animation: pop .7s;
+	animation-timing-function: cubic-bezier(.71, .55, .62, 1.57);
+	transform: translate3D(0,0,0);
+}
+@keyframes pop{
+	0%{
+		transform: scale(0.1)
+	}
+	100%{
+		transform: scale(1)
+	}
+}
