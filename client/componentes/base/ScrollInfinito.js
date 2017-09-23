@@ -25,13 +25,14 @@ export default class ScrollInfinito extends React.Component {
     	this.scroll.removeEventListener('scroll', this.handleScroll)
   	}
   	handleScroll() {
-  		if (this.panel.offsetHeight - this.scroll.offsetHeight <= this.scroll.scrollTop){
-  			if (Math.abs(this.anteriorTop-this.scroll.scrollTop)<3){
+  		if (this.panel.offsetHeight - this.scroll.offsetHeight <= this.scroll.scrollTop + 2){
+  			if (Math.abs(this.anteriorTop-this.scroll.scrollTop)<4){
 	  			return
 	  		}
 	  		this.props.onTop(this.scroll.scrollTop)
+        this.anteriorTop = this.scroll.scrollTop
   		}
-      this.anteriorTop = this.scroll.scrollTop
+      this.anteriorTop = this.scroll.scrollTop<this.anteriorTop?this.scroll.scrollTop: this.anteriorTop
   	}
 }
 
