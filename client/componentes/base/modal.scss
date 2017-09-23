@@ -1,6 +1,7 @@
 .t {
 	transform: translate3D(0,0,0);
 	animation: tr .7s ease-in-out;
+	transition: opacity .3s ease-in-out;
 	opacity: 0.7;
 }
 @keyframes tr{
@@ -19,6 +20,7 @@
 	animation: pop .7s;
 	animation-timing-function: cubic-bezier(.71, .55, .62, 1.57);
 	transform: translate3D(0,0,0);
+	transition: transform .3s ease-in-out;
 }
 @keyframes pop{
 	0%{

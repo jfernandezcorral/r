@@ -10,7 +10,6 @@ export const modal = (comp) => {
 	div.style.top = '0px'
 	div.style.height = '100%'
 	div.style.width = '100%'
-	//div.id = 'x_x'
 	const cmp = <div>
 		<div className={estilo.t} style={{position: 'absolute', top: '0px', width: '100%', height: '100%', backgroundColor: 'black'}}></div>
 		<div onClick={cerrar} style={{position: 'absolute', top: '0px', width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', alignContent: 'center'}}>
@@ -20,14 +19,17 @@ export const modal = (comp) => {
 		</div>
 	</div>
 	ReactDOM.render(cmp, div)
+	const velo = div.firstChild.firstChild
+	const popup = div.firstChild.children[1].firstChild
 	function cerrar(){
+		velo.style.opacity = 0
+		popup.style.transform = "scale(0.1)"
 		setTimeout(
 			()=>{
-				//const div = document.getElementById('x_x')
 				ReactDOM.unmountComponentAtNode(div)
-				div.remove()
+				body.removeChild(div)
 			}
-		,0)
+		,300)
 	}
 	return cerrar
 }
