@@ -63,6 +63,6 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.optimize.UglifyJsPlugin() // call the uglify plugin
   );
   module.exports.plugins.push(
-    new CopyWebpackPlugin([{ from: 'client/img', to: 'client/img' }])
+    new CopyWebpackPlugin([{ from: 'client/img/**/*'/*, to: 'client/img' */}])
   );
 }
