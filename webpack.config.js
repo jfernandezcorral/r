@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './client/index.html',
   filename: 'index.html',
@@ -60,5 +61,8 @@ if (process.env.NODE_ENV === 'production') {
   console.log('compilación producción')
   module.exports.plugins.push(
     new webpack.optimize.UglifyJsPlugin() // call the uglify plugin
+  );
+  module.exports.plugins.push(
+    new CopyWebpackPlugin([{ from: 'client/img', to: 'client/img' }])
   );
 }

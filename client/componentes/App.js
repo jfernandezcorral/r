@@ -27,7 +27,8 @@ export default class App extends React.Component {
         		<section style={{width: '70%'}} className={estilos.panel}>
                     <ScrollInfinito onTop={(i)=> console.log(i)}>
         				<div>
-        					<a onClick={this.handle}>dfasf</a><br/>
+        					<img src="client/img/k.png"/>
+                            <a onClick={this.handle}>dfasf</a><br/>
                             <p>erewtrwerwer</p>
         					<p>erewtrwerwer</p>
         					<p>erewtrwerwer</p>
