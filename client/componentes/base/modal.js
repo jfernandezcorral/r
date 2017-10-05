@@ -11,7 +11,7 @@ export const modal = (comp) => {
 	div.style.height = '100%'
 	div.style.width = '100%'
 	const cmp = <div>
-		<div className={estilo.t} style={{position: 'absolute', top: '0px', width: '100%', height: '100%', backgroundColor: 'black'}}></div>
+		<div className={estilo.t} style={{position: 'absolute', top: '0px', width: '100%', height: '100%', backgroundColor: 'white'}}></div>
 		<div onClick={cerrar} style={{position: 'absolute', top: '0px', width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', alignContent: 'center'}}>
 			<div className={estilo.popup} onClick={(e)=>e.stopPropagation()}>
 				{comp}
