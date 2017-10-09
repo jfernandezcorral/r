@@ -3,10 +3,12 @@ import estilos from'./App.scss';
 import Comercial from './comercial/Comercial';
 import ScrollInfinito from 'cmp/base/ScrollInfinito';
 import {modal} from 'cmp/base/modal';
+import {menu} from 'cmp/base/menu';
 export default class App extends React.Component {
     constructor(props) {
         super(props)
         this.handle = this.handle.bind(this)
+        this.handleimg = this.handleimg.bind(this)
     }
     handle(e){
         const diag = <div style={{width: '500px'}}>
@@ -18,6 +20,13 @@ export default class App extends React.Component {
         </div>
        this.cerrar = modal(diag)
     }
+     handleimg(e){
+        menu([
+                {t: 'opción 1', cb: () => console.log('opcion1')},
+                {t: 'opción 2', cb: () => console.log('opcion2')}
+            ], e
+        )
+    }
     render() {
         return (
         	<div style={{height: '100%', display: 'flex'/*, alignItems: 'stretch'*/}}>
@@ -27,12 +36,12 @@ export default class App extends React.Component {
         		<section style={{width: '70%'}} className={estilos.panel}>
                     <ScrollInfinito onTop={(i)=> console.log(i)}>
         				<div>
-        					<img src="client/img/k.png"/>
-                            <a onClick={this.handle}>dfasf</a><br/>
+        					<a onClick={this.handle}>Abrir dialogo</a><br/>
                             <p>erewtrwerwer</p>
         					<p>erewtrwerwer</p>
         					<p>erewtrwerwer</p>
         					<p>erewtrwerwer</p>
+                            <img src="client/img/k.png" onClick={this.handleimg}/>
         					<p>erewtrwerwer</p>
         					<p>erewtrwerwer</p>
         					<p>erewtrwerwer</p>
