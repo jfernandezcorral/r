@@ -35,8 +35,9 @@ export default class App extends React.Component {
         		</aside>
         		<section style={{width: '70%'}} className={estilos.panel}>
                     <ScrollInfinito onTop={(i)=> console.log(i)}>
-        				<div>
+        				<div style={{position: 'relative'}}>
         					<a onClick={this.handle}>Abrir dialogo</a><br/>
+                            <img style={{position: 'absolute', right: '10px'}} src="client/img/k.png" onClick={this.handleimg}/>
                             <p>erewtrwerwer</p>
         					<p>erewtrwerwer</p>
         					<p>erewtrwerwer</p>
