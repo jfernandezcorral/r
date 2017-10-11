@@ -20,7 +20,7 @@ export default class App extends React.Component {
         </div>
        this.cerrar = modal(diag)
     }
-     handleimg(e){
+    handleimg(e){
         menu([
                 {t: 'opción 1', cb: () => console.log('opcion1')},
                 {t: 'opción 2', cb: () => console.log('opcion2')}
