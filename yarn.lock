@@ -3893,9 +3893,9 @@ react@^15.6.1:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
-"reactcomponent@git+https://github.com/jfernandezcorral/reactcomponent.git#1.0.5":
-  version "1.0.1"
-  resolved "git+https://github.com/jfernandezcorral/reactcomponent.git#9af7815f3eb87e998387d822c1f42dd84ce90605"
+"reactcomponent@git+https://github.com/jfernandezcorral/reactcomponent.git#1.0.6":
+  version "1.0.6"
+  resolved "git+https://github.com/jfernandezcorral/reactcomponent.git#ccd935f361ee536213258e955d1090919db82dc6"
   dependencies:
     babel-polyfill "^6.23.0"
     prop-types "^15.5.10"
