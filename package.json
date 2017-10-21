@@ -14,7 +14,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "reactcomponent": "git+https://github.com/jfernandezcorral/reactcomponent.git#1.0.6"
+    "reactcomponent": "git+https://github.com/jfernandezcorral/reactcomponent.git#1.0.10"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.1.0",
