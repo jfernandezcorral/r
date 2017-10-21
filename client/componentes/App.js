@@ -2,9 +2,9 @@ import React from 'react';
 import estilos from'./App.scss';
 import Comercial from './comercial/Comercial';
 import ScrollInfinito from 'cmp/base/ScrollInfinito';
-//import {modal} from 'cmp/base/modal';
-//import {menu} from 'cmp/base/menu';
-import {modal, menu} from 'reactcomponent'
+import {modal} from 'cmp/base/modal';
+import {menu} from 'cmp/base/menu';
+//import {modal, menu} from 'reactcomponent'
 export default class App extends React.Component {
     constructor(props) {
         super(props)

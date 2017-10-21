@@ -1,6 +1,7 @@
-import React from 'react';
-import S from './Comercial.scss';
-import {menu} from 'reactcomponent'
+import React from 'react'
+import S from './Comercial.scss'
+import {menu} from 'cmp/base/menu';
+//import {menu} from 'reactcomponent'
 export default (props) =>{
 	const handleimg = (e) => {
        menu([{t: 'opción 1', cb: () => console.log('opcion1')}, {t: 'opción 2', cb: () => console.log('opcion2')}], e)
