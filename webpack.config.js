@@ -31,6 +31,7 @@ let config = {
   devtool: 'source-map',
   module: {
     loaders: [
+      //{ test: /\.js$/, loader: 'source-map-loader', include: /node_modules/ },
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.scss$/, 
