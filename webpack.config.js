@@ -21,7 +21,8 @@ let config = {
   resolve: {
     extensions: ['.js', '.jsx', '.css', '.scss'],
     alias: {
-      cmp: path.resolve(__dirname,'./client/componentes')
+      cmp: path.resolve(__dirname,'./client/componentes'),
+      cl: path.resolve(__dirname,'./client')
     }
     /*modules: [
       path.resolve('./client'),
@@ -50,6 +51,10 @@ let config = {
             {loader: 'css-loader', options: {modules: true, localIdentName: '[name]__[local]___[hash:base64:5]', sourceMap: true}}
           ]
         }) 
+      },
+      {
+        test: /\.(woff|png|gif)$/,
+        loader: 'url-loader',
       }
     ]
   },

@@ -7,3 +7,10 @@
 	background-color: $front;
 	padding: 5px;
 }
+p:before{
+	font-family: 'bankia-icons-webfont'; 
+	content:"\e010";
+}
+.bg{
+	background-image: url('cl/img/k.png');
+}
