@@ -52,9 +52,16 @@ let config = {
           ]
         }) 
       },
-      {
+      /*{
         test: /\.(woff|png|gif)$/,
         loader: 'url-loader',
+      }*/
+      {
+        test: /\.(woff|png|gif)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
+        }  
       }
     ]
   },
