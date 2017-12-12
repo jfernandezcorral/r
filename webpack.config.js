@@ -40,7 +40,7 @@ let config = {
           fallback: "style-loader",
           use: [
             {loader: 'css-loader', options: {modules: true, localIdentName: '[name]__[local]___[hash:base64:5]', sourceMap: true}},
-            {loader: 'sass-loader', options: {/*sourceMap: true*/}}
+            {loader: 'ruby-sass-loader', options: {/*sourceMap: true*/}}
           ]
         }) 
       },
